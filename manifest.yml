@@ -1,0 +1,7 @@
+applications:
+  - name: demo-credhub
+    buildpacks:
+      - java_buildpack_offline
+    memory: 1g
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+}}'

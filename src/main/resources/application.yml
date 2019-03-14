@@ -1,0 +1,12 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [ "health", "info" ]
+
+# Population from VCAP_SERVICES json via CloudFoundryVcapEnvironmentPostProcessor
+# When run in CloudFoundry "credhub-ref" entries will be rewritten with the actual values
+# from CredHub itself via mTLS between the container and the process launcher...
+
+my-secrets:
+  secret-list: ${vcap.services.my-secrets.credentials.secret-list:unknown0,unkown1,unknown2}
